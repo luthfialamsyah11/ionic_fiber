@@ -284,3 +284,32 @@ ion-footer.td-footer {
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+// ─── Maximum Light UI Upgrade Styles ─────────────────────────────────────────
+
+/* 1. Glassmorphism Footer */
+.td-footer {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  box-shadow: 0 -10px 20px rgba(0,0,0,0.03);
+}
+
+/* 2. Glassmorphism Info Cards */
+.info-card {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.03);
+  border-radius: 16px;
+  background: #FFFFFF;
+}
+
+/* 3. Staggered Animations */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stagger-1 { animation: slideUpFade 0.5s ease-out 0.1s both; }
+.stagger-2 { animation: slideUpFade 0.5s ease-out 0.2s both; }
+.stagger-3 { animation: slideUpFade 0.5s ease-out 0.3s both; }
+.stagger-4 { animation: slideUpFade 0.5s ease-out 0.4s both; }
+.stagger-5 { animation: slideUpFade 0.5s ease-out 0.5s both; }

@@ -123,6 +123,14 @@ export class DashboardPage implements OnInit {
     return 'Selamat Malam 👋';
   }
 
+  getTimeClass(): string {
+    const hour = new Date().getHours();
+    if (hour < 12) return 'time-morning';
+    if (hour < 15) return 'time-noon';
+    if (hour < 18) return 'time-afternoon';
+    return 'time-night';
+  }
+
   goToTaskList() {
     this.router.navigate(['/task-list']);
   }

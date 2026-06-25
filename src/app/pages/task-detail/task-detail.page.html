@@ -15,7 +15,7 @@
   <div *ngIf="!isLoading && task">
 
     <!-- Hero Banner -->
-    <div class="hero-banner">
+    <div class="hero-banner stagger-1">
       <button class="back-btn" (click)="goBack()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </button>
@@ -37,7 +37,7 @@
     <div class="info-section">
 
       <!-- Description -->
-      <div class="info-card" *ngIf="task.description">
+      <div class="info-card stagger-2" *ngIf="task.description">
         <div class="info-label">
           <ion-icon name="document-text-outline"></ion-icon>
           Deskripsi Pekerjaan
@@ -46,7 +46,7 @@
       </div>
 
       <!-- Customer & Schedule Row -->
-      <div class="info-row">
+      <div class="info-row stagger-3">
         <div class="info-card half" *ngIf="task.customer_name">
           <div class="info-label">
             <ion-icon name="person-outline"></ion-icon>
@@ -70,7 +70,7 @@
       </div>
 
       <!-- Location -->
-      <div class="info-card" *ngIf="task.location">
+      <div class="info-card stagger-4" *ngIf="task.location">
         <div class="info-label">
           <ion-icon name="location-outline"></ion-icon>
           Lokasi
@@ -83,7 +83,7 @@
       </div>
 
       <!-- Notes -->
-      <div class="info-card" *ngIf="task.notes">
+      <div class="info-card stagger-5" *ngIf="task.notes">
         <div class="info-label">
           <ion-icon name="chatbox-outline"></ion-icon>
           Catatan Tambahan

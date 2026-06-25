@@ -318,3 +318,34 @@
   0%   { background-position: 200% 0; }
   100% { background-position: -200% 0; }
 }
+
+// ─── Maximum Light UI Upgrade Styles ─────────────────────────────────────────
+
+/* 1. Glassmorphism Section Cards */
+.section-card {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.03);
+  border-radius: 16px;
+  background: #FFFFFF;
+}
+
+/* 2. Neumorphic Buttons */
+.btn-action {
+  box-shadow: inset 2px 2px 5px rgba(255,255,255,0.7), inset -3px -3px 7px rgba(0,0,0,0.03), 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.btn-action:active:not(:disabled) {
+  transform: scale(0.96);
+  box-shadow: inset 3px 3px 6px rgba(0,0,0,0.1), inset -2px -2px 4px rgba(255,255,255,0.7);
+}
+
+/* 3. Staggered Animations */
+@keyframes slideUpFade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.stagger-1 { animation: slideUpFade 0.5s ease-out 0.1s both; }
+.stagger-2 { animation: slideUpFade 0.5s ease-out 0.2s both; }
+.stagger-3 { animation: slideUpFade 0.5s ease-out 0.3s both; }
+.stagger-4 { animation: slideUpFade 0.5s ease-out 0.4s both; }
+.stagger-5 { animation: slideUpFade 0.5s ease-out 0.5s both; }

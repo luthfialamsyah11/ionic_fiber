@@ -5,13 +5,13 @@
   </ion-refresher>
 
   <!-- Header -->
-  <div class="hist-header-section">
+  <div class="hist-header-section stagger-1">
     <h1>Riwayat Tugas</h1>
     <p class="hist-subtitle">Tugas yang telah selesai atau ditolak</p>
   </div>
 
   <!-- Summary Box -->
-  <div class="summary-box" *ngIf="!isLoading && histories.length > 0">
+  <div class="summary-box stagger-2" *ngIf="!isLoading && histories.length > 0">
     <div class="summary-item">
       <span class="sum-num">{{ histories.length }}</span>
       <span class="sum-label">Total</span>
@@ -43,12 +43,13 @@
   </div>
 
   <!-- History List -->
-  <div class="hist-list" *ngIf="!isLoading && histories.length > 0">
+  <div class="hist-list stagger-3" *ngIf="!isLoading && histories.length > 0">
 
     <div
       class="hist-card"
-      *ngFor="let item of histories"
+      *ngFor="let item of histories; let i = index"
       (click)="goToDetail(item.id)"
+      [style.animation-delay]="(i * 0.1 + 0.3) + 's'"
     >
       <div class="hist-icon-wrap" [class.completed]="item.status === 'completed'" [class.rejected]="item.status === 'rejected'">
         <ion-icon [name]="getStatusIcon(item.status)"></ion-icon>
