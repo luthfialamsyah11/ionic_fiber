@@ -6,7 +6,7 @@
   </ion-refresher>
 
   <!-- Header Section -->
-  <div class="dash-header" [ngClass]="getTimeClass()">
+  <div class="dash-header">
     <div class="header-top">
       <div class="user-info">
         <div class="avatar">
@@ -51,7 +51,7 @@
   </div>
 
   <!-- Loading Skeleton -->
-  <div *ngIf="isLoading" class="skeleton-wrap stagger-1">
+  <div *ngIf="isLoading" class="skeleton-wrap">
     <div class="skeleton-stats">
       <div class="skeleton-card"></div>
       <div class="skeleton-card"></div>
@@ -67,32 +67,28 @@
   <div *ngIf="!isLoading" class="dash-body">
 
     <!-- Performance Dashboard Summary Card -->
-    <div class="perf-card stagger-1">
+    <div class="perf-card">
       <div class="perf-header">Performa Hari Ini</div>
       <div class="perf-stats">
         <div class="perf-item">
-          <div class="radial-progress star" style="--val: {{ 4.9 * 20 }};">
-            <span class="perf-num green">4.9</span>
-          </div>
-          <span class="perf-label">Rating ★</span>
+          <span class="perf-num green">4.9 ★</span>
+          <span class="perf-label">Rating</span>
         </div>
+        <div class="perf-divider"></div>
         <div class="perf-item">
-          <div class="radial-progress accept" style="--val: 100;">
-            <span class="perf-num blue">100%</span>
-          </div>
+          <span class="perf-num blue">100%</span>
           <span class="perf-label">Penerimaan</span>
         </div>
+        <div class="perf-divider"></div>
         <div class="perf-item">
-          <div class="radial-progress complete" style="--val: {{ completedTasks * 10 > 100 ? 100 : completedTasks * 10 }};">
-            <span class="perf-num purple">{{ completedTasks }}</span>
-          </div>
+          <span class="perf-num purple">{{ completedTasks }}</span>
           <span class="perf-label">Selesai</span>
         </div>
       </div>
     </div>
 
     <!-- Stats Grid (Overview) -->
-    <div class="stats-grid stagger-2">
+    <div class="stats-grid">
       <div class="stat-card" (click)="goToTaskList()">
         <div class="stat-icon-wrap pending">
           <ion-icon name="time-outline"></ion-icon>
@@ -115,14 +111,14 @@
     </div>
 
     <!-- Offline Overlay/Warning (if Offline) -->
-    <div class="offline-warning-card stagger-3" *ngIf="!isOnline">
+    <div class="offline-warning-card" *ngIf="!isOnline">
       <ion-icon name="power-outline"></ion-icon>
       <h4>Status Anda Sedang Offline</h4>
       <p>Aktifkan status di atas untuk menerima notifikasi penugasan baru dari dispatcher.</p>
     </div>
 
     <!-- Active Task Card -->
-    <div class="current-job-premium stagger-3" *ngIf="activeTask && isOnline" (click)="goToTaskDetail(activeTask.id)">
+    <div class="current-job-premium" *ngIf="activeTask && isOnline" (click)="goToTaskDetail(activeTask.id)">
       <div class="job-header">
         <div class="job-pulse-container">
           <div class="pulse-ring"></div>
@@ -151,7 +147,7 @@
     </div>
 
     <!-- Next Assignment Card -->
-    <div class="next-assignment-premium stagger-3" *ngIf="nextTask && isOnline && !activeTask" (click)="goToTaskDetail(nextTask.id)">
+    <div class="next-assignment-premium" *ngIf="nextTask && isOnline && !activeTask" (click)="goToTaskDetail(nextTask.id)">
       <div class="na-header">
         <ion-icon name="calendar-outline" class="na-icon"></ion-icon>
         <span>Tugas Berikutnya</span>
@@ -169,8 +165,8 @@
     </div>
 
     <!-- Quick Actions -->
-    <div class="section-title stagger-4">Aksi Cepat</div>
-    <div class="quick-actions stagger-4">
+    <div class="section-title">Aksi Cepat</div>
+    <div class="quick-actions">
       <button class="action-btn" (click)="goToTaskList()">
         <div class="action-icon blue">
           <ion-icon name="clipboard-outline"></ion-icon>
@@ -198,14 +194,14 @@
     </div>
 
     <!-- Recent Tasks -->
-    <div class="section-title stagger-5">Tugas Terbaru</div>
+    <div class="section-title">Tugas Terbaru</div>
 
-    <div *ngIf="recentTasks.length === 0" class="empty-state stagger-5">
+    <div *ngIf="recentTasks.length === 0" class="empty-state">
       <ion-icon name="clipboard-outline"></ion-icon>
       <p>Belum ada tugas yang ditugaskan</p>
     </div>
 
-    <div class="task-horizontal-scroll stagger-5" *ngIf="recentTasks.length > 0">
+    <div class="task-list" *ngIf="recentTasks.length > 0">
       <div
         class="task-card-premium"
         *ngFor="let task of recentTasks"

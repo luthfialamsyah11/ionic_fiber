@@ -10,7 +10,7 @@
   <div *ngIf="!isLoading && task">
 
     <!-- Task Info Banner -->
-    <div class="task-banner stagger-1">
+    <div class="task-banner">
       <button class="back-btn" (click)="goBack()">
         <ion-icon name="arrow-back-outline"></ion-icon>
       </button>
@@ -29,7 +29,7 @@
     <div class="je-body">
 
       <!-- Start Task Button (if assigned but not started) -->
-      <div class="section-card stagger-2" *ngIf="task.status === 'assigned' || task.status === 'accepted'">
+      <div class="section-card" *ngIf="task.status === 'assigned' || task.status === 'accepted'">
         <div class="section-header">
           <div class="section-icon blue">
             <ion-icon name="play-circle-outline"></ion-icon>
@@ -44,7 +44,7 @@
       </div>
 
       <!-- Progress Update (if in progress) -->
-      <div class="section-card stagger-3" *ngIf="task.status === 'on-going'">
+      <div class="section-card" *ngIf="task.status === 'on-going'">
         <div class="section-header">
           <div class="section-icon purple">
             <ion-icon name="bar-chart-outline"></ion-icon>
@@ -90,7 +90,7 @@
       </div>
 
       <!-- Proof of Work Upload -->
-      <div class="section-card stagger-4" *ngIf="task.status === 'on-going'">
+      <div class="section-card" *ngIf="task.status === 'on-going'">
         <div class="section-header">
           <div class="section-icon orange">
             <ion-icon name="camera-outline"></ion-icon>
@@ -127,7 +127,7 @@
       </div>
 
       <!-- Complete Task -->
-      <div class="section-card complete-card stagger-5" *ngIf="task.status === 'on-going'">
+      <div class="section-card complete-card" *ngIf="task.status === 'on-going'">
         <div class="section-header">
           <div class="section-icon green">
             <ion-icon name="checkmark-done-outline"></ion-icon>

@@ -5,7 +5,7 @@
   </ion-refresher>
 
   <!-- Header -->
-  <div class="tl-header-section stagger-1">
+  <div class="tl-header-section">
     <div class="tl-title-row">
       <h1>Daftar Tugas</h1>
       <span class="task-count" *ngIf="!isLoading">{{ filteredTasks.length }} tugas</span>
@@ -23,7 +23,7 @@
   </div>
 
   <!-- Filter Chips -->
-  <div class="filter-scroll stagger-2">
+  <div class="filter-scroll">
     <button
       *ngFor="let f of filters"
       class="filter-chip"
@@ -49,12 +49,11 @@
   </div>
 
   <!-- Task Cards -->
-  <div class="task-list stagger-3" *ngIf="!isLoading && filteredTasks.length > 0">
+  <div class="task-list" *ngIf="!isLoading && filteredTasks.length > 0">
     <div
       class="task-card"
-      *ngFor="let task of filteredTasks; let i = index"
+      *ngFor="let task of filteredTasks"
       (click)="goToDetail(task.id)"
-      [style.animation-delay]="(i * 0.1 + 0.3) + 's'"
     >
       <div class="priority-bar" [style.background]="getPriorityColor(task.priority)"></div>
       <div class="card-body">

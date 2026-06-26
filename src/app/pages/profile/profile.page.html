@@ -13,14 +13,14 @@
   <div *ngIf="!isLoading" class="prof-body">
 
     <!-- Header -->
-    <div class="prof-header-section stagger-1">
+    <div class="prof-header-section">
       <h1>Profil Saya</h1>
     </div>
 
     <!-- VIEW MODE -->
     <ng-container *ngIf="!isEditing">
       <!-- Profile Summary Card -->
-      <div class="profile-hero-card stagger-2">
+      <div class="profile-hero-card">
         <div class="profile-main-info">
           <div class="avatar-circle">
             {{ name ? name.substring(0, 1).toUpperCase() : 'T' }}
@@ -55,8 +55,8 @@
       </div>
 
       <!-- Settings List Category: Akun -->
-      <div class="fo-section-header stagger-3">Pengaturan Akun</div>
-      <div class="fo-list-group stagger-3">
+      <div class="fo-section-header">Pengaturan Akun</div>
+      <div class="fo-list-group">
         <div class="fo-list-item" (click)="isEditing = true">
           <div class="item-icon-wrap blue">
             <ion-icon name="person-outline"></ion-icon>
@@ -81,8 +81,8 @@
       </div>
 
       <!-- Settings List Category: Dukungan & Info -->
-      <div class="fo-section-header stagger-4">Dukungan & Aplikasi</div>
-      <div class="fo-list-group stagger-4">
+      <div class="fo-section-header">Dukungan & Aplikasi</div>
+      <div class="fo-list-group">
         <div class="fo-list-item" (click)="helpCenter()">
           <div class="item-icon-wrap green">
             <ion-icon name="help-circle-outline"></ion-icon>
@@ -107,7 +107,7 @@
       </div>
 
       <!-- Logout Button -->
-      <div class="logout-container stagger-5">
+      <div class="logout-container">
         <button class="btn-logout-premium" (click)="doLogout()">
           <ion-icon name="log-out-outline"></ion-icon>
           <span>Keluar dari Akun</span>
